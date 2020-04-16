@@ -15,13 +15,17 @@ class SignUp extends React.Component {
       displayName: '',
       email: '',
       password: '',
-      confirmPassword: ''
+      confirmPassword: '',
+      signUpButtonText: 'Sign Up'
     }
   }
 
   handleSubmit = async (event) => {
     event.preventDefault();
 
+    this.setState({
+      signUpButtonText: 'Submitting...'
+    })
     const { displayName, email, password, confirmPassword } = this.state;
 
     if (password !== confirmPassword) {
@@ -38,7 +42,8 @@ class SignUp extends React.Component {
         displayName: '',
         email: '',
         password: '',
-        confirmPassword: ''
+        confirmPassword: '',
+        signUpButtonText: 'Sign Up'
       });
     } catch (error) {
       console.error(error);
@@ -90,8 +95,8 @@ class SignUp extends React.Component {
             label='Confirm Password'
             required
           />
-          <CustomButton type='submit'>
-            SIGN UP
+          <CustomButton type='submit' >
+            {`${this.state.signUpButtonText}`}
           </CustomButton>
         </form>
       </div>
