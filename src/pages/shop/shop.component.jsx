@@ -8,7 +8,7 @@ import CollectionPage from '../collection/collection-page.component';
 const ShopPage = ({ match }) => (
   <div className='shop-page'>
     <Route exact path={`${match.path}`} component={CollectionOverview} />
-    <Route path={`${match.path}/:categoryName`} component={CollectionPage} />
+    <Route path={`${match.path}/:collectionName`} component={CollectionPage} />
   </div>
 );
 
