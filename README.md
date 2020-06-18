@@ -1,68 +1,46 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Jund Clothing
 
-## Available Scripts
+<p align="center">
+<img src="./public/jund-clothing.png" width="60%" alt="jund-clothing" />
+</p>
 
-In the project directory, you can run:
+jund-clothing is a React web app for clothing market place. It uses [Firebase](https://firebase.google.com/) for backend service and [Stripe](https://stripe.com/) for handling payment.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Categorization
+- Payment
+- Authentication
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Installation
 
-### `npm test`
+To get started, fir you have to make sure that you have a package manager installed in your machine, either [NPM](https://docs.npmjs.com/about-npm/) or [Yarn](https://yarnpkg.com/getting-started) will do, although I recommend the former.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> To install the packages through npm, run the command
 
-### `npm run build`
+    npm install
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Running
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Local development mode
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To start in your local machine, simply run
 
-### `npm run eject`
+    npm run dev
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### For production
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The main difference of running this app in production mode and development mode is we don't need development dependencies when running this app, it will result in lighter package. To package this app without all the development dependencies and run from this package, simply run the following command
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    npm run build
+    npm start
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Technologies
 
-## Learn More
+- [React](https://reactjs.org/) - JavaScript UI framework
+- [Styled Components](https://www.styled-components.com/) - Styling
+- [Redux](https://redux.js.org/) - Global state manager
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This project is licensed under the MIT License - see the [License](./LICENSE) file for details
