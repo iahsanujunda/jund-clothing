@@ -1,4 +1,5 @@
 import UserActionTypes from './user.types';
+import {User} from "firebase";
 
 const INITIAL_STATE = {
   currentUser: null,
@@ -7,15 +8,20 @@ const INITIAL_STATE = {
 
 const userReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case UserActionTypes.GOOGLE_SIGNIN_SUCCESS:
-    case UserActionTypes.EMAIL_SIGNIN_SUCCESS:
+    case UserActionTypes.SIGNIN_SUCCESS:
       return {
         ...state,
         currentUser: action.payload,
         error: null
       }
-    case UserActionTypes.GOOGLE_SIGNIN_FAILED:
-    case UserActionTypes.EMAIL_SIGNIN_FAILED:
+    case UserActionTypes.SIGNOUT_SUCCESS:
+      return {
+        ...state,
+        currentUser: null,
+        error: null
+      }
+    case UserActionTypes.SIGNIN_FAILED:
+    case UserActionTypes.SIGNOUT_FAILED:
       return {
         ...state,
         error: action.payload

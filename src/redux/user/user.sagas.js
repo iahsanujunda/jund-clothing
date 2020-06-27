@@ -5,6 +5,8 @@ import UserActionTypes from "./user.types";
 import {
   signinSuccess,
   signinFailed,
+  signoutSuccess,
+  signoutFailed
 } from "./user.action";
 
 import {
@@ -61,6 +63,15 @@ export function* isUserAuthenticated() {
   }
 }
 
+export function* signout() {
+  try {
+    yield auth.signOut();
+    yield put(signoutSuccess());
+  } catch (error) {
+    yield put(signoutFailed(error));
+  }
+}
+
 export function* onGoogleSigninStart() {
   yield takeLatest(UserActionTypes.GOOGLE_SIGNIN_START, signinWithGoogle)
 }
@@ -73,10 +84,15 @@ export function* onCheckUserSession() {
   yield takeLatest(UserActionTypes.CHECK_USER_SESSION, isUserAuthenticated)
 }
 
+export function* onSignoutStart() {
+  yield takeLatest(UserActionTypes.SIGNOUT_START, signout)
+}
+
 export function* userSagas() {
   yield all([
     call(onGoogleSigninStart),
     call(onEmailSigninStart),
-    call(onCheckUserSession)
+    call(onCheckUserSession),
+    call(onSignoutStart)
   ]);
 }
