@@ -26,7 +26,6 @@ class ShopPage extends React.Component {
         />
         <Route path={`${match.path}/:collectionName`}
                component={CollectionPageContainer}
-        />}
         />
       </div>
     );
